@@ -39,11 +39,11 @@ This type also has an extra step of exchanging the authorization code for the ac
 HOW IT WORKS
 
 1.  The client app redirects the user to the authorization server's authorization server's endpoint, the client app sends some query parameters which help the authorization in identifying the client app and its intent. The query parameters are:
-    - a) `response_type` \- this defines the type of response that is expected. In this flow it will be code.
-    - b) `client_id` this parameter defines the id of the client that needs access to the resource(Pics art app's client ID).
-    - c) `redirect_uri` this is the uri where the authorization server redirect to once its finished interacting with the resource owner.
-    - d) `scope` \- this parameter defines the resources to which access is being requested (not a mandatory parameter ). and if it is not provided the authorization server provides access to default resources already defined for this client.
-    - e) `state` the application generates a random string and includes it is in the request.
+    - `response_type` \- this defines the type of response that is expected. In this flow it will be code.
+    - `client_id` this parameter defines the id of the client that needs access to the resource(Pics art app's client ID).
+    - `redirect_uri` this is the uri where the authorization server redirect to once its finished interacting with the resource owner.
+    - `scope` \- this parameter defines the resources to which access is being requested (not a mandatory parameter ). and if it is not provided the authorization server provides access to default resources already defined for this client.
+    - `state` the application generates a random string and includes it is in the request.
     the complete request looks like this
     `https://authorization.server.dummy.com/authorize?response_type=code&client_id=12345&redirect_uri=https://client.dummy.com/callback&scope=images_read&state=abcde`
     when the resource owner opens opens this url in the browser the auth server will present them with a prompt asking if they'd like to authorize this application's request.
